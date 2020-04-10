@@ -22,7 +22,12 @@ test('passing two args, expect Hello, Jill and Jane', () => {
 });
 
 test('passing mixed args, two lower, one upper', () => {
-   let name1='Amy', name2='Brian', name3='Charlotte';
    const answer = fxn.greet('Amy', 'BRIAN', 'Charlotte');
    expect(answer).toMatch(/Hello, Amy and Charlotte. AND HELLO BRIAN!/);
 });
+
+test('passing irregular grouping, (lower), (lower,lower)', () => {
+   const answer = fxn.greet("Bob", "Charlie, Dianne");
+   expect(answer).toMatch(/Hello, Bob, Charlie, and Dianne\./);
+});
+
