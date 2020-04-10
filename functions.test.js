@@ -5,7 +5,12 @@ test('should return Hello, <name>.', () => {
    expect(answer).toMatch(/Hello, Bob\./);
 });
 
-test('passing null, should return Hell, my friend.', () => {
+test('passing null, should return Hello, my friend.', () => {
    const answer = fxn.greet('');
    expect(answer).toMatch(/Hello, my friend\./);
+});
+
+test('passing shout, expect HELLO, BILL!', () => {
+   const answer = fxn.greet('BILL');
+   expect(answer).toMatch(/HELLO, BILL!/);
 });
