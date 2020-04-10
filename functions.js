@@ -1,14 +1,28 @@
 var fxn = {
-   greet: function(name){
+   greet: function(...names){
       let def = 'my friend';
-      let NAME = name.toUpperCase(); 
-      if(name == ''){
-         return "Hello, " + def + ".";
+      let resp = "Hello, ";
+
+      if(names.length == 0){
+         resp += def + ".";
       }
-      else if(name == NAME){
-         return "HELLO, " + name + "!";
+      else if(names.length == 1){
+         let NAME = names[0].toUpperCase();
+         if(names[0] == NAME){
+            resp = resp.toUpperCase() + NAME + "!";
+         }
+         else{
+            resp += names[0] + ".";
+         }
       }
-      return "Hello, " + name + ".";
+      else{
+         resp += names[0];
+         names.slice(1).forEach(name => {
+            resp += " and " + name;
+         });
+         resp += ".";
+      }
+      return resp;
    }
 }
 
