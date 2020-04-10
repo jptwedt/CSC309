@@ -1,6 +1,9 @@
 var fxn = {
    greet: function(name){
-      return "Hello, " + name + ".";
+      let def = 'my friend';
+      return (name == '')?
+         "Hello, " + def + ".":
+         "Hello, " + name + ".";
    }
 }
 

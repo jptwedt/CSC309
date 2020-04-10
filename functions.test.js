@@ -6,6 +6,6 @@ test('should return Hello, <name>.', () => {
 });
 
 test('passing null, should return Hell, my friend.', () => {
-   const answer = fxn.greet();
+   const answer = fxn.greet('');
    expect(answer).toMatch(/Hello, my friend\./);
 });
