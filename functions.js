@@ -11,11 +11,21 @@ var fxn = {
          let argarr = Array.prototype.slice.call(args);
          let names = new Array();
          argarr.forEach(arg => {
-            if(arg.includes(", ")){
+            if(arg.includes(", ") && !arg.includes("\"")){
                ppl = arg.split(", ");
                ppl.forEach(person => {
                   names.push(person);
                });
+            }
+            else if(arg.includes("\"")){
+               let temp = arg.split("\"");
+               let str = '';
+               temp.forEach(tem => {
+                  if(tem.length > 0){
+                     str += tem;
+                  }
+               });
+               names.push(str);
             }
             else{
                names.push(arg);

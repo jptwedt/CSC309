@@ -30,6 +30,11 @@ test('passing irregular grouping, (lower), (lower,lower)', () => {
    expect(answer).toMatch(/Hello, Bob, Charlie, and Dianne\./);
 });
 
+test('passing escaped quotes expect Hello, Bob and Charlie, Dianne.', () => {
+   const answer = fxn.greet("Bob", "\"Charlie, Dianne\"");
+   expect(answer).toMatch(/Hello, Bob and Charlie, Dianne\./);
+});
+
 test('testing uppercase detection, expect true', () => {
    const answer = fxn.isUpper("BOB");
    expect(answer).toBeTruthy();
